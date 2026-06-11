@@ -1,6 +1,7 @@
 # Randkluft
 
-**Randkluft** is an R-based method for automated marker intensity gating in multiplexed tissue imaging (e.g., CyCIF). It identifies positive-cell cutoffs by finding the truncation threshold at which the skewness of the lower distribution approaches zero — making no assumptions about the number of mixture components. This repository contains the analysis scripts and reproducibility materials accompanying the paper submitted to *Bioinformatics*.
+**Randkluft** is an R-based method for automated marker intensity gating in multiplexed tissue imaging (e.g., CyCIF). It identifies positive-cell cutoffs by finding the truncation threshold at which the skewness of the lower distribution approaches zero by making no assumptions about the number of mixture components or any distributional properties of the density. This repository contains the analysis scripts and reproducibility materials accompanying the paper submitted to *Bioinformatics*. For the main application and its complete walk-through guide please consult the publication or visit https://github.com/AmiryousefiLab/Randkluft.
+
 
 ---
 
@@ -9,8 +10,6 @@
 Marker gating (i.e. separating positive from negative cells based on protein expression intensity) is a critical step in single-cell tissue imaging analysis. Existing approaches such as Gaussian Mixture Models (GMM) and GammaGateR require parametric assumptions that can fail for skewed, heavy-tailed, or unimodal distributions commonly encountered in CyCIF data.
 
 Randkluft takes a non-parametric approach: it scans candidate cutoffs on log-transformed intensity data and selects the threshold at which the skewness of the truncated below-cutoff distribution is closest to zero, where the negative population is most symmetric. This is robust to a wide range of distributional shapes and requires no manual initialization.
-
-This Repository contains the code and the outputs relevant to the manuscript for reproducibility. For the main application and the and its complete walk-through guide please consult the publication or visit https://github.com/AmiryousefiLab/Randkluft.
 
 ---
 
